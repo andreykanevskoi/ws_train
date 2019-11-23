@@ -1,0 +1,18 @@
+C:\Users\student\Desktop\Новая папка\WF_App\WF_App\bin\Debug\WF_App.exe.config
+C:\Users\student\Desktop\Новая папка\WF_App\WF_App\bin\Debug\WF_App.exe
+C:\Users\student\Desktop\Новая папка\WF_App\WF_App\bin\Debug\WF_App.pdb
+C:\Users\student\Desktop\Новая папка\WF_App\WF_App\obj\Debug\WF_App.csprojResolveAssemblyReference.cache
+C:\Users\student\Desktop\Новая папка\WF_App\WF_App\obj\Debug\WF_App.Form1.resources
+C:\Users\student\Desktop\Новая папка\WF_App\WF_App\obj\Debug\WF_App.Properties.Resources.resources
+C:\Users\student\Desktop\Новая папка\WF_App\WF_App\obj\Debug\WF_App.csproj.GenerateResource.Cache
+C:\Users\student\Desktop\Новая папка\WF_App\WF_App\obj\Debug\WF_App.exe
+C:\Users\student\Desktop\Новая папка\WF_App\WF_App\obj\Debug\WF_App.pdb
+C:\Users\student\Desktop\ws2019\student1\WF_App\WF_App\bin\Debug\WF_App.exe.config
+C:\Users\student\Desktop\ws2019\student1\WF_App\WF_App\obj\Debug\WF_App.exe
+C:\Users\student\Desktop\ws2019\student1\WF_App\WF_App\obj\Debug\WF_App.pdb
+C:\Users\student\Desktop\ws2019\student1\WF_App\WF_App\bin\Debug\WF_App.exe
+C:\Users\student\Desktop\ws2019\student1\WF_App\WF_App\bin\Debug\WF_App.pdb
+C:\Users\student\Desktop\ws2019\student1\WF_App\WF_App\obj\Debug\WF_App.csprojResolveAssemblyReference.cache
+C:\Users\student\Desktop\ws2019\student1\WF_App\WF_App\obj\Debug\WF_App.Form1.resources
+C:\Users\student\Desktop\ws2019\student1\WF_App\WF_App\obj\Debug\WF_App.Properties.Resources.resources
+C:\Users\student\Desktop\ws2019\student1\WF_App\WF_App\obj\Debug\WF_App.csproj.GenerateResource.Cache
