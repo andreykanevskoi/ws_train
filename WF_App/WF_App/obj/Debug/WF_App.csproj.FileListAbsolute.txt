@@ -16,3 +16,12 @@ C:\Users\student\Desktop\ws2019\student1\WF_App\WF_App\obj\Debug\WF_App.csprojRe
 C:\Users\student\Desktop\ws2019\student1\WF_App\WF_App\obj\Debug\WF_App.Form1.resources
 C:\Users\student\Desktop\ws2019\student1\WF_App\WF_App\obj\Debug\WF_App.Properties.Resources.resources
 C:\Users\student\Desktop\ws2019\student1\WF_App\WF_App\obj\Debug\WF_App.csproj.GenerateResource.Cache
+D:\Andrey\ws_train\ws_train\WF_App\WF_App\bin\Debug\WF_App.exe.config
+D:\Andrey\ws_train\ws_train\WF_App\WF_App\bin\Debug\WF_App.exe
+D:\Andrey\ws_train\ws_train\WF_App\WF_App\bin\Debug\WF_App.pdb
+D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.csprojAssemblyReference.cache
+D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.AuthorizationForm.resources
+D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.Properties.Resources.resources
+D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.csproj.GenerateResource.cache
+D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.exe
+D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.pdb
