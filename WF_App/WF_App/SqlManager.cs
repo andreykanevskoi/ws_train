@@ -15,19 +15,14 @@ namespace WF_App
         public SqlDataReader sql_DR;
         public SqlManager()
         {
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "LAPTOP-FA26V349";
-            builder.InitialCatalog = "ws_train";
-            builder.IntegratedSecurity = true;
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder
+            {
+                DataSource = "LAPTOP-FA26V349",
+                InitialCatalog = "ws_train",
+                IntegratedSecurity = true
+            };
 
             sql_connection = new SqlConnection(builder.ConnectionString);
-            sql_connection.Open();
-
-        }
-
-        ~SqlManager()
-        {
-            sql_connection.Close();
         }
     }
 }

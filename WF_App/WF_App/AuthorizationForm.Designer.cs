@@ -33,6 +33,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSignIn = new System.Windows.Forms.Button();
+            this.btnSignUp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtLogin
@@ -62,6 +63,7 @@
             this.txtPassword.Size = new System.Drawing.Size(244, 22);
             this.txtPassword.TabIndex = 0;
             this.txtPassword.Text = "2M2IQH";
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -75,20 +77,31 @@
             // 
             // btnSignIn
             // 
-            this.btnSignIn.Location = new System.Drawing.Point(16, 117);
+            this.btnSignIn.Location = new System.Drawing.Point(15, 117);
             this.btnSignIn.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(100, 28);
+            this.btnSignIn.Size = new System.Drawing.Size(119, 28);
             this.btnSignIn.TabIndex = 2;
             this.btnSignIn.Text = "Войти";
             this.btnSignIn.UseVisualStyleBackColor = true;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
+            // 
+            // btnSignUp
+            // 
+            this.btnSignUp.Location = new System.Drawing.Point(142, 117);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(118, 28);
+            this.btnSignUp.TabIndex = 3;
+            this.btnSignUp.Text = "Регистрация";
+            this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(277, 161);
+            this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -113,6 +126,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSignIn;
+        private System.Windows.Forms.Button btnSignUp;
     }
 }
 

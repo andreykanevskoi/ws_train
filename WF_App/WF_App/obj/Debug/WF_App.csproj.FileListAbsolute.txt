@@ -25,3 +25,5 @@ D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.Properties.Resources.
 D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.csproj.GenerateResource.cache
 D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.exe
 D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.pdb
+D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.Menu.resources
+D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.RegistrationForm.resources

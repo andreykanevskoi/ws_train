@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
@@ -24,20 +19,29 @@ namespace WF_App
             string login = txtLogin.Text;
             string pass = txtPassword.Text;
 
-            if (!SqlChecker.isExistLogin(login))
+            if (!SqlQuery.Query_isExistLogin(login))
             {
-                MessageBox.Show("Пользователя с таким логином не существует!");
+                MessageBox.Show("Пользователя с таким логином не существует!",
+                                "Предупреждение");
                 return;
             }
 
-            if (!SqlChecker.isExistAccount(login, pass))
+            if (!SqlQuery.Query_isExistAccount(login, pass))
             {
-                MessageBox.Show("Неверный пароль!");
+                MessageBox.Show("Неверный пароль!",
+                                "Предупреждение");
                 return;
             }
 
-            MessageBox.Show("Вы вошли!");
+            SqlQuery.Query_initUser(login);
+            MessageBox.Show("Здравствуйте, " + User.user_login + "!");
+
             return;
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            this.OpenForm(new RegistrationForm());
         }
     }
 
