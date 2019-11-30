@@ -19,9 +19,22 @@ namespace WF_App
             {
                 DataSource = "LAPTOP-FA26V349",
                 InitialCatalog = "ws_train",
-                IntegratedSecurity = true
+                //IntegratedSecurity = true
             };
 
+            sql_connection = new SqlConnection(builder.ConnectionString);
+        }
+        public SqlManager(bool kek)
+        {
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder
+            {
+                DataSource = @"mssql-ws.mopevm.sfedu.ru",
+                InitialCatalog = "student7",
+                UserID = "student7",
+                Password = "student7student7"
+            };
+
+            //sql_connection = new SqlConnection(@"Data Source=mssql-ws.mopevm.sfedu.ru;Initial Catalog=student7;User ID=student7;Password=student7student7");
             sql_connection = new SqlConnection(builder.ConnectionString);
         }
     }

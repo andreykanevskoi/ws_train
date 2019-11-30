@@ -13,7 +13,7 @@ namespace WF_App
     {
         public static bool Query_isExistLogin(string login)
         {
-            SqlManager manager = new SqlManager();
+            SqlManager manager = new SqlManager(true);
             manager.sql_connection.Open();
 
             string request = string.Format(@"SELECT User_Login FROM Users WHERE User_Login='{0}'", login);
@@ -107,6 +107,35 @@ namespace WF_App
                 dgw.Rows.Add(row);
             }
             
+            manager.sql_connection.Close();
+            return;
+        }
+
+        public static void Query_FilterUsers(DataGridView dgw, string column, string pattern)
+        {
+            SqlManager manager = new SqlManager();
+            manager.sql_connection.Open();
+
+            string request = "SELECT u.[User_ID], u.[User_SecondName], u.[User_First_Middle_Name], u.[User_Login], r.[Role] " +
+                             "FROM Users as u JOIN Roles as r ON u.Role_ID = r.Role_ID " +
+              string.Format(@"WHERE [{0}] LIKE \'%{1}%\'", column, pattern);
+
+            manager.sql_command = new SqlCommand(request, manager.sql_connection);
+            manager.sql_DR = manager.sql_command.ExecuteReader();
+
+            while (manager.sql_DR.Read())
+            {
+                string[] row =
+                {
+                    manager.sql_DR[0].ToString(),
+                    manager.sql_DR[1].ToString(),
+                    manager.sql_DR[2].ToString(),
+                    manager.sql_DR[3].ToString(),
+                    manager.sql_DR[4].ToString()
+                };
+                dgw.Rows.Add(row);
+            }
+
             manager.sql_connection.Close();
             return;
         }

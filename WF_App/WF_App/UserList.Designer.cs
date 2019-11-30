@@ -29,13 +29,18 @@
         private void InitializeComponent()
         {
             this.dgwUsers = new System.Windows.Forms.DataGridView();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SecondName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FM_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.cboxField = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwUsers)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgwUsers
@@ -54,19 +59,9 @@
             this.dgwUsers.ReadOnly = true;
             this.dgwUsers.RowHeadersWidth = 51;
             this.dgwUsers.RowTemplate.Height = 24;
-            this.dgwUsers.Size = new System.Drawing.Size(857, 366);
+            this.dgwUsers.Size = new System.Drawing.Size(857, 344);
             this.dgwUsers.TabIndex = 0;
             this.dgwUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(12, 384);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(120, 32);
-            this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "<--- Назад";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // ID
             // 
@@ -113,13 +108,68 @@
             this.Role.Name = "Role";
             this.Role.ReadOnly = true;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(12, 424);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(120, 32);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "<--- Назад";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // cboxField
+            // 
+            this.cboxField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxField.FormattingEnabled = true;
+            this.cboxField.Items.AddRange(new object[] {
+            "ID",
+            "Фамилия",
+            "Имя Отчество",
+            "Логин",
+            "Должность"});
+            this.cboxField.Location = new System.Drawing.Point(6, 21);
+            this.cboxField.Name = "cboxField";
+            this.cboxField.Size = new System.Drawing.Size(215, 24);
+            this.cboxField.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnFilter);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.cboxField);
+            this.groupBox1.Location = new System.Drawing.Point(452, 362);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(417, 103);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Фильтрация";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(227, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(184, 22);
+            this.textBox1.TabIndex = 3;
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Location = new System.Drawing.Point(227, 62);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(184, 32);
+            this.btnFilter.TabIndex = 4;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
             // UserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 428);
+            this.ClientSize = new System.Drawing.Size(881, 468);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.dgwUsers);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -128,6 +178,8 @@
             this.Text = "UserList";
             this.Load += new System.EventHandler(this.UserList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgwUsers)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -141,5 +193,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FM_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Login;
         private System.Windows.Forms.DataGridViewTextBoxColumn Role;
+        private System.Windows.Forms.ComboBox cboxField;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

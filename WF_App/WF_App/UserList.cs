@@ -31,5 +31,25 @@ namespace WF_App
         {
 
         }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            //string field = "User_ID";
+            //switch(cboxField.Text)
+            //{
+            //    case "ID":
+            //        field = "User_ID";
+            //        return;
+            //    case "Фамилия":
+            //        field = "User_SecondName";
+            //        return;
+            //    case "Имя Отчество":
+            //        field = "User_First_Middle_Name";
+            //        return;
+            //    case ""
+
+            //}
+            //SqlQuery.Query_FilterUsers(dgwUsers, )
+        }
     }
 }
