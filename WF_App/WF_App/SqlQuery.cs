@@ -11,7 +11,7 @@ namespace WF_App
 {
     static class SqlQuery
     {
-        public static bool Query_isExistLogin(string login)
+        public static bool Query_User_isExistLogin(string login)
         {
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
@@ -29,7 +29,7 @@ namespace WF_App
             return isExistLogin;
         }
 
-        public static bool Query_isExistAccount(string login, string pw)
+        public static bool Query_User_isExistAccount(string login, string pw)
         {
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
@@ -49,7 +49,7 @@ namespace WF_App
             return isExistPassword;
         }
     
-        public static void Query_initUser(string login)
+        public static void Query_User_initUser(string login)
         {
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
@@ -68,7 +68,7 @@ namespace WF_App
             return;
         }
 
-        public static void Query_NewUser(string login, string password, int role)
+        public static void Query_User_NewUser(string login, string password, int role)
         {
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
@@ -83,7 +83,7 @@ namespace WF_App
             return;
         }
     
-        public static void Query_FillDataGridViewWithUsers(DataGridView dgw)
+        public static void Query_User_FillDataGridViewWithUsers(DataGridView dgw)
         {
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
@@ -111,7 +111,7 @@ namespace WF_App
             return;
         }
 
-        public static void Query_FilterUsers(DataGridView dgw, string column, string pattern)
+        public static void Query_User_FilterUsers(DataGridView dgw, string column, string pattern)
         {
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
@@ -142,7 +142,7 @@ namespace WF_App
             return;
         }
 
-        public static void Query_FillDataGridViewWithIngredients(DataGridView dgw)
+        public static void Query_Ingredient_FillDataGridViewWithIngredients(DataGridView dgw)
         {
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
@@ -174,7 +174,7 @@ namespace WF_App
             return;
         }
 
-        public static void Query_FilterIngredients(DataGridView dgw, string column, string pattern)
+        public static void Query_Ingredient_FilterIngredients(DataGridView dgw, string column, string pattern)
         {
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
@@ -209,5 +209,58 @@ namespace WF_App
             return;
         }
         
+        public static void Query_Ingredient_DeleteIngredient(string ID)
+        {
+            SqlManager manager = new SqlManager();
+            manager.sql_connection.Open();
+
+            string request = string.Format(@"DELETE FROM [dbo].[Ingredients] " +
+                                           @"WHERE [dbo].[Ingredients].[IngredientID] = {0}", ID);
+
+            manager.sql_command = new SqlCommand(request, manager.sql_connection);
+            manager.sql_command.ExecuteNonQuery();
+
+            manager.sql_connection.Close();
+        }
+
+        public static bool Query_Ingredient_IsExist(string ID)
+        {
+            SqlManager manager = new SqlManager();
+            manager.sql_connection.Open();
+
+            string request = string.Format(@"SELECT IngredientID FROM Ingredients WHERE IngredientID='{0}'", ID);
+
+            manager.sql_command = new SqlCommand(request, manager.sql_connection);
+
+            manager.sql_DR = manager.sql_command.ExecuteReader();
+            manager.sql_DR.Read();
+
+            bool isExist = manager.sql_DR.HasRows;
+
+            manager.sql_connection.Close();
+
+            return isExist;
+        }
+    
+        public static List<string> Query_Ingredient_GetGlossaryByList(string table, string column)
+        {
+            SqlManager manager = new SqlManager();
+            manager.sql_connection.Open();
+
+            List<string> result = new List<string>();
+
+            string request = string.Format(@"SELECT {0} FROM {1}", column, table);
+
+            manager.sql_command = new SqlCommand(request, manager.sql_connection);
+
+            manager.sql_DR = manager.sql_command.ExecuteReader();
+            while(manager.sql_DR.Read())
+            {
+                result.Add(manager.sql_DR[0].ToString());
+            }
+
+            manager.sql_connection.Close();
+            return result;
+        }
     }
 }

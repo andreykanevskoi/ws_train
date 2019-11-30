@@ -27,21 +27,21 @@ namespace WF_App
             }
 
             //if (!SqlQuery.Query_isExistLogin(login))
-            if (!SqlQuery.Query_isExistLogin(login))
+            if (!SqlQuery.Query_User_isExistLogin(login))
             {
                 MessageBox.Show("Пользователя с таким логином не существует!",
                                 "Предупреждение");
                 return;
             }
 
-            if (!SqlQuery.Query_isExistAccount(login, pass))
+            if (!SqlQuery.Query_User_isExistAccount(login, pass))
             {
                 MessageBox.Show("Неверный пароль!",
                                 "Предупреждение");
                 return;
             }
 
-            SqlQuery.Query_initUser(login);
+            SqlQuery.Query_User_initUser(login);
             MessageBox.Show("Здравствуйте, " + User.user_login + "!");
 
             this.OpenForm(new Menu());

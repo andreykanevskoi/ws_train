@@ -24,7 +24,7 @@ namespace WF_App
 
         private void IngredientList_Load(object sender, EventArgs e)
         {
-            SqlQuery.Query_FillDataGridViewWithIngredients(dgwIngredients);
+            SqlQuery.Query_Ingredient_FillDataGridViewWithIngredients(dgwIngredients);
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
@@ -58,7 +58,30 @@ namespace WF_App
                                     "Предупреждение");
                     return;
             }
-            SqlQuery.Query_FilterIngredients(dgwIngredients, field, txtFilter.Text);
+            SqlQuery.Query_Ingredient_FilterIngredients(dgwIngredients, field, txtFilter.Text);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите удалить выбранную запись?",
+                                                        "Предупреждение", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // сохраняем выбранную ячейку
+                var delRow = dgwIngredients.SelectedRows[0];
+
+                // запрос на удаление
+                SqlQuery.Query_Ingredient_DeleteIngredient(delRow.Cells[0].Value.ToString());
+
+                // удаление из DataGridView
+                dgwIngredients.Rows.Remove(delRow);
+            }
+            return;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            this.OpenForm(new AddIngredientForm(), false);
         }
     }
 }

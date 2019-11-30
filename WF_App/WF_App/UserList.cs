@@ -24,7 +24,7 @@ namespace WF_App
 
         private void UserList_Load(object sender, EventArgs e)
         {
-            SqlQuery.Query_FillDataGridViewWithUsers(dgwUsers);
+            SqlQuery.Query_User_FillDataGridViewWithUsers(dgwUsers);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -57,7 +57,7 @@ namespace WF_App
                                     "Предупреждение");
                     return;
             }
-            SqlQuery.Query_FilterUsers(dgwUsers, field, txtFilter.Text);
+            SqlQuery.Query_User_FilterUsers(dgwUsers, field, txtFilter.Text);
         }
     }
 }

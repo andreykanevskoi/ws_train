@@ -47,7 +47,7 @@ namespace WF_App
             }
 
 
-            if (SqlQuery.Query_isExistLogin(login))
+            if (SqlQuery.Query_User_isExistLogin(login))
             {
                 MessageBox.Show("Пользователь с таким логином уже существует!",
                                 "Предупреждение");
@@ -98,7 +98,7 @@ namespace WF_App
 
             cboxRole.BackColor = Color.LightGreen;
 
-            SqlQuery.Query_NewUser(login,
+            SqlQuery.Query_User_NewUser(login,
                                    password,
                                    Features.GetRoleFromStr(cboxRole.Text));
 

@@ -65,6 +65,7 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -74,6 +75,7 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnFilter
             // 
@@ -125,6 +127,7 @@
             this.dgwIngredients.Name = "dgwIngredients";
             this.dgwIngredients.RowHeadersWidth = 51;
             this.dgwIngredients.RowTemplate.Height = 24;
+            this.dgwIngredients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwIngredients.Size = new System.Drawing.Size(1206, 426);
             this.dgwIngredients.TabIndex = 6;
             // 
