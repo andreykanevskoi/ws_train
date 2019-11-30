@@ -13,7 +13,7 @@ namespace WF_App
     {
         public static bool Query_isExistLogin(string login)
         {
-            SqlManager manager = new SqlManager(true);
+            SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
 
             string request = string.Format(@"SELECT User_Login FROM Users WHERE User_Login='{0}'", login);
@@ -116,9 +116,11 @@ namespace WF_App
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
 
+            dgw.Rows.Clear();
+
             string request = "SELECT u.[User_ID], u.[User_SecondName], u.[User_First_Middle_Name], u.[User_Login], r.[Role] " +
                              "FROM Users as u JOIN Roles as r ON u.Role_ID = r.Role_ID " +
-              string.Format(@"WHERE [{0}] LIKE \'%{1}%\'", column, pattern);
+              string.Format(@"WHERE [{0}] LIKE '%{1}%'", column, pattern);
 
             manager.sql_command = new SqlCommand(request, manager.sql_connection);
             manager.sql_DR = manager.sql_command.ExecuteReader();
@@ -139,5 +141,38 @@ namespace WF_App
             manager.sql_connection.Close();
             return;
         }
+
+        public static void Query_FillDataGridViewWithIngredients(DataGridView dgw)
+        {
+            SqlManager manager = new SqlManager();
+            manager.sql_connection.Open();
+
+            string request = @"SELECT i.[IngredientID],i.[Name],t.[Type],i.[Price],p.[Pack],i.[Quantity],i.[Unit] " +
+                             @"FROM[dbo].[Ingredients] as i " +
+                             @"JOIN [dbo].[PackGlos] as p ON i.[PackID] = p.[Pack_ID] " +
+                             @"JOIN[dbo].[TypeGlos] as t ON i.[TypeID] = t.[Type_ID]";
+
+            manager.sql_command = new SqlCommand(request, manager.sql_connection);
+            manager.sql_DR = manager.sql_command.ExecuteReader();
+
+            while (manager.sql_DR.Read())
+            {
+                string[] row =
+                {
+                    manager.sql_DR[0].ToString(),
+                    manager.sql_DR[1].ToString(),
+                    manager.sql_DR[2].ToString(),
+                    (Convert.ToDouble(manager.sql_DR[3])).ToString("0.00"),
+                    manager.sql_DR[4].ToString(),
+                    manager.sql_DR[5].ToString(),
+                    manager.sql_DR[6].ToString()
+                };
+                dgw.Rows.Add(row);
+            }
+
+            manager.sql_connection.Close();
+            return;
+        }
+
     }
 }

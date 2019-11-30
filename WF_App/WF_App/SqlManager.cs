@@ -18,8 +18,8 @@ namespace WF_App
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder
             {
                 DataSource = "LAPTOP-FA26V349",
-                InitialCatalog = "ws_train",
-                //IntegratedSecurity = true
+                IntegratedSecurity = true,
+                InitialCatalog = "ws_train"
             };
 
             sql_connection = new SqlConnection(builder.ConnectionString);

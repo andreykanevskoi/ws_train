@@ -53,6 +53,12 @@
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Features.cs" />
+    <Compile Include="IngredientList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngredientList.Designer.cs">
+      <DependentUpon>IngredientList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <EmbeddedResource Include="AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngredientList.resx">
+      <DependentUpon>IngredientList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

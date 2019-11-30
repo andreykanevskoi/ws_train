@@ -37,8 +37,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.cboxField = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnFilter = new System.Windows.Forms.Button();
+            this.txtFilter = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgwUsers)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -54,12 +54,13 @@
             this.FM_Name,
             this.Login,
             this.Role});
-            this.dgwUsers.Location = new System.Drawing.Point(12, 12);
+            this.dgwUsers.Location = new System.Drawing.Point(12, 121);
             this.dgwUsers.Name = "dgwUsers";
             this.dgwUsers.ReadOnly = true;
             this.dgwUsers.RowHeadersWidth = 51;
             this.dgwUsers.RowTemplate.Height = 24;
-            this.dgwUsers.Size = new System.Drawing.Size(857, 344);
+            this.dgwUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgwUsers.Size = new System.Drawing.Size(857, 383);
             this.dgwUsers.TabIndex = 0;
             this.dgwUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -110,7 +111,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(12, 424);
+            this.btnCancel.Location = new System.Drawing.Point(12, 530);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 32);
             this.btnCancel.TabIndex = 1;
@@ -135,22 +136,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.groupBox1.Controls.Add(this.btnFilter);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtFilter);
             this.groupBox1.Controls.Add(this.cboxField);
-            this.groupBox1.Location = new System.Drawing.Point(452, 362);
+            this.groupBox1.Location = new System.Drawing.Point(452, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(417, 103);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Фильтрация";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(227, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 22);
-            this.textBox1.TabIndex = 3;
             // 
             // btnFilter
             // 
@@ -162,11 +157,18 @@
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(227, 21);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(184, 22);
+            this.txtFilter.TabIndex = 3;
+            // 
             // UserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 468);
+            this.ClientSize = new System.Drawing.Size(881, 574);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.dgwUsers);
             this.Controls.Add(this.groupBox1);
@@ -196,6 +198,6 @@
         private System.Windows.Forms.ComboBox cboxField;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFilter;
     }
 }

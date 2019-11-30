@@ -30,7 +30,11 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnUsersList = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnIngredientsList = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -53,11 +57,43 @@
             this.btnUsersList.UseVisualStyleBackColor = true;
             this.btnUsersList.Click += new System.EventHandler(this.btnUsersList_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(18, 395);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(304, 43);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Закрыть";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnIngredientsList);
+            this.groupBox2.Location = new System.Drawing.Point(12, 108);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(316, 71);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Персонал";
+            // 
+            // btnIngredientsList
+            // 
+            this.btnIngredientsList.Location = new System.Drawing.Point(5, 22);
+            this.btnIngredientsList.Name = "btnIngredientsList";
+            this.btnIngredientsList.Size = new System.Drawing.Size(304, 43);
+            this.btnIngredientsList.TabIndex = 3;
+            this.btnIngredientsList.Text = "Таблица ингредиентов";
+            this.btnIngredientsList.UseVisualStyleBackColor = true;
+            this.btnIngredientsList.Click += new System.EventHandler(this.btnIngredientsList_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(340, 450);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -67,6 +103,7 @@
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -75,5 +112,8 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnUsersList;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnIngredientsList;
     }
 }

@@ -33,5 +33,15 @@ namespace WF_App
                 return;
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnIngredientsList_Click(object sender, EventArgs e)
+        {
+            this.OpenForm(new IngredientList());
+        }
     }
 }
