@@ -9,6 +9,12 @@ namespace WF_App
 {
     static class Features
     {
+        public static string[] roles = {"", "Директор", 
+            "Мастер", 
+            "Заказчик", 
+            "Менеджер по продажам", 
+            "Менеджер по закупкам" };
+        
         public static DialogResult OpenForm(this Form form, Form secondForm, bool hiddenOwner = true)
         {
             // Если флаг, что нужно скрывать родительскую форму активен -> скрываем
@@ -70,12 +76,21 @@ namespace WF_App
     
         public static int GetRoleFromStr(string role) 
         {
-            if (role == "Директор") return 1;
-            if (role == "Мастер") return 2;
-            if (role == "Менеджер по продажам") return 4;
-            if (role == "Менеджер по закупкам") return 5;
+            int i = 1;
+            for (; i < roles.Length; i++)
+                if (roles[i] == role)
+                    return i;
             
             return 3;
         }
+
+        public static string GetRoleFromInt(int role)
+        {
+            if (role <= 0 || role >= roles.Length)
+                return roles[3];
+
+            return roles[role];
+        }
     }
+    
 }

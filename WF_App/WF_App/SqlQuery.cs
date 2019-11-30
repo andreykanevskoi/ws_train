@@ -15,7 +15,7 @@ namespace WF_App
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
 
-            string request = "SELECT User_Login FROM Users WHERE User_Login=" + '\'' + login + '\'';
+            string request = string.Format(@"SELECT User_Login FROM Users WHERE User_Login='{0}'", login);
 
             manager.sql_command = new SqlCommand(request, manager.sql_connection);
 
@@ -33,8 +33,8 @@ namespace WF_App
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
 
-            string request = "SELECT User_Login, User_Password FROM Users WHERE User_Login=" +
-                '\'' + login + '\'' + " AND " + "User_Password=" + '\'' + pw + '\'';
+            string request = string.Format(@"SELECT User_Login, User_Password "+
+                                           @"FROM Users WHERE User_Login='{0}' AND User_Password='{1}'", login, pw);
 
             manager.sql_command = new SqlCommand(request, manager.sql_connection);
 
@@ -53,8 +53,7 @@ namespace WF_App
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
 
-            string request = "SELECT User_Login, Role_ID FROM Users WHERE User_Login=" +
-                '\'' + login + '\'';
+            string request = string.Format(@"SELECT User_Login, Role_ID FROM Users WHERE User_Login='{0}'", login);
 
             manager.sql_command = new SqlCommand(request, manager.sql_connection);
 
@@ -73,10 +72,8 @@ namespace WF_App
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
 
-            string request = "INSERT INTO Users (User_Login, User_Password, Role_ID) VALUES (" +
-                '\'' + login + '\'' + ',' + 
-                '\'' + password + '\'' + ',' + 
-                role + ')';
+            string request = string.Format(@"INSERT INTO Users (User_Login, User_Password, Role_ID) " +
+                                           @"VALUES ('{0}','{1}', {2})", login, password, Convert.ToString(role));
 
             manager.sql_command = new SqlCommand(request, manager.sql_connection);
 

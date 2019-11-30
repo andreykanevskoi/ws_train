@@ -18,7 +18,15 @@ namespace WF_App
         {
             string login = txtLogin.Text;
             string pass = txtPassword.Text;
+            
+            if (!Features.IsCorrectLogin(login))
+            {
+                MessageBox.Show("Введен некорректный логин!",
+                                "Предупреждение");
+                return;
+            }
 
+            //if (!SqlQuery.Query_isExistLogin(login))
             if (!SqlQuery.Query_isExistLogin(login))
             {
                 MessageBox.Show("Пользователя с таким логином не существует!",
@@ -36,6 +44,7 @@ namespace WF_App
             SqlQuery.Query_initUser(login);
             MessageBox.Show("Здравствуйте, " + User.user_login + "!");
 
+            this.OpenForm(new Menu());
             return;
         }
 
