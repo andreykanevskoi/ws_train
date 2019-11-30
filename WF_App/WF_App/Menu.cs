@@ -21,5 +21,17 @@ namespace WF_App
         {
             
         }
+
+        private void btnUsersList_Click(object sender, EventArgs e)
+        {
+            if (User.user_role == User.ROLE_DIRECTOR)
+                this.OpenForm(new UserList());
+            else
+            {
+                MessageBox.Show("У вас нет прав для выполнения данного действия!",
+                                "Предупреждение");
+                return;
+            }
+        }
     }
 }
