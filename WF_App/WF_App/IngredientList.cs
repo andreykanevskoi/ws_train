@@ -26,5 +26,39 @@ namespace WF_App
         {
             SqlQuery.Query_FillDataGridViewWithIngredients(dgwIngredients);
         }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            string field = "IngredienID";
+            switch (cboxColumn.Text)
+            {
+                case "Артикул":
+                    field = "IngredienID";
+                    break;
+                case "Наименование":
+                    field = "Name";
+                    break;
+                case "Тип":
+                    field = "Type";
+                    break;
+                case "Цена":
+                    field = "Price";
+                    break;
+                case "Фасовка":
+                    field = "Pack";
+                    break;
+                case "Количество":
+                    field = "Quantity";
+                    break;
+                case "Единицы измерения":
+                    field = "Unit";
+                    break;
+                default:
+                    MessageBox.Show("Не выбрано поле сортировки!",
+                                    "Предупреждение");
+                    return;
+            }
+            SqlQuery.Query_FilterIngredients(dgwIngredients, field, txtFilter.Text);
+        }
     }
 }

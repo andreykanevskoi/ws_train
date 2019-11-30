@@ -35,7 +35,6 @@
             this.cboxColumn = new System.Windows.Forms.ComboBox();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.dgwIngredients = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.IngredienID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IngredientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +42,7 @@
             this.PackID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgwIngredients)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -83,10 +83,20 @@
             this.btnFilter.TabIndex = 3;
             this.btnFilter.Text = "Фильтровать";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // cboxColumn
             // 
+            this.cboxColumn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxColumn.FormattingEnabled = true;
+            this.cboxColumn.Items.AddRange(new object[] {
+            "Артикул",
+            "Наименование",
+            "Тип",
+            "Цена",
+            "Фасовка",
+            "Количество",
+            "Единицы измерения"});
             this.cboxColumn.Location = new System.Drawing.Point(6, 34);
             this.cboxColumn.Name = "cboxColumn";
             this.cboxColumn.Size = new System.Drawing.Size(121, 24);
@@ -117,18 +127,6 @@
             this.dgwIngredients.RowTemplate.Height = 24;
             this.dgwIngredients.Size = new System.Drawing.Size(1206, 426);
             this.dgwIngredients.TabIndex = 6;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cboxColumn);
-            this.groupBox1.Controls.Add(this.txtFilter);
-            this.groupBox1.Controls.Add(this.btnFilter);
-            this.groupBox1.Location = new System.Drawing.Point(804, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(414, 73);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Фильтрация";
             // 
             // IngredienID
             // 
@@ -178,6 +176,18 @@
             this.Unit.HeaderText = "Единицы измерения";
             this.Unit.MinimumWidth = 6;
             this.Unit.Name = "Unit";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cboxColumn);
+            this.groupBox1.Controls.Add(this.txtFilter);
+            this.groupBox1.Controls.Add(this.btnFilter);
+            this.groupBox1.Location = new System.Drawing.Point(804, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(414, 73);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Фильтрация";
             // 
             // IngredientList
             // 

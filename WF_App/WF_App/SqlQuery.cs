@@ -174,5 +174,40 @@ namespace WF_App
             return;
         }
 
+        public static void Query_FilterIngredients(DataGridView dgw, string column, string pattern)
+        {
+            SqlManager manager = new SqlManager();
+            manager.sql_connection.Open();
+
+            dgw.Rows.Clear();
+
+            string request = @"SELECT i.[IngredientID],i.[Name],t.[Type],i.[Price],p.[Pack],i.[Quantity],i.[Unit] " +
+                             @"FROM[dbo].[Ingredients] as i " +
+                             @"JOIN [dbo].[PackGlos] as p ON i.[PackID] = p.[Pack_ID] " +
+                             @"JOIN[dbo].[TypeGlos] as t ON i.[TypeID] = t.[Type_ID]" +
+               string.Format(@"WHERE [{0}] LIKE '%{1}%'", column, pattern);
+
+            manager.sql_command = new SqlCommand(request, manager.sql_connection);
+            manager.sql_DR = manager.sql_command.ExecuteReader();
+
+            while (manager.sql_DR.Read())
+            {
+                string[] row =
+                {
+                    manager.sql_DR[0].ToString(),
+                    manager.sql_DR[1].ToString(),
+                    manager.sql_DR[2].ToString(),
+                    (Convert.ToDouble(manager.sql_DR[3])).ToString("0.00"),
+                    manager.sql_DR[4].ToString(),
+                    manager.sql_DR[5].ToString(),
+                    manager.sql_DR[6].ToString()
+                };
+                dgw.Rows.Add(row);
+            }
+
+            manager.sql_connection.Close();
+            return;
+        }
+        
     }
 }
