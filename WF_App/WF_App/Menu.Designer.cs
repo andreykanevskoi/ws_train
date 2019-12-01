@@ -33,6 +33,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnIngredientsList = new System.Windows.Forms.Button();
+            this.btnCabinet = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -69,10 +70,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCabinet);
             this.groupBox2.Controls.Add(this.btnIngredientsList);
             this.groupBox2.Location = new System.Drawing.Point(12, 108);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(316, 71);
+            this.groupBox2.Size = new System.Drawing.Size(316, 128);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Персонал";
@@ -81,11 +83,21 @@
             // 
             this.btnIngredientsList.Location = new System.Drawing.Point(5, 22);
             this.btnIngredientsList.Name = "btnIngredientsList";
-            this.btnIngredientsList.Size = new System.Drawing.Size(304, 43);
+            this.btnIngredientsList.Size = new System.Drawing.Size(305, 43);
             this.btnIngredientsList.TabIndex = 0;
             this.btnIngredientsList.Text = "Таблица ингредиентов";
             this.btnIngredientsList.UseVisualStyleBackColor = true;
             this.btnIngredientsList.Click += new System.EventHandler(this.btnIngredientsList_Click);
+            // 
+            // btnCabinet
+            // 
+            this.btnCabinet.Location = new System.Drawing.Point(5, 79);
+            this.btnCabinet.Name = "btnCabinet";
+            this.btnCabinet.Size = new System.Drawing.Size(305, 43);
+            this.btnCabinet.TabIndex = 3;
+            this.btnCabinet.Text = "Личный кабинет";
+            this.btnCabinet.UseVisualStyleBackColor = true;
+            this.btnCabinet.Click += new System.EventHandler(this.btnCabinet_Click);
             // 
             // Menu
             // 
@@ -115,5 +127,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnIngredientsList;
+        private System.Windows.Forms.Button btnCabinet;
     }
 }

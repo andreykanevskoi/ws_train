@@ -88,6 +88,12 @@
     <Compile Include="SqlQuery.cs" />
     <Compile Include="SqlManager.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserCabinet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserCabinet.Designer.cs">
+      <DependentUpon>UserCabinet.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCabinet.resx">
+      <DependentUpon>UserCabinet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserList.resx">
       <DependentUpon>UserList.cs</DependentUpon>

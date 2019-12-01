@@ -43,5 +43,10 @@ namespace WF_App
         {
             this.OpenForm(new IngredientList());
         }
+
+        private void btnCabinet_Click(object sender, EventArgs e)
+        {
+            this.OpenForm(new UserCabinet());
+        }
     }
 }

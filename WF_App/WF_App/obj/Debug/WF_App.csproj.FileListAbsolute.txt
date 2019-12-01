@@ -31,3 +31,4 @@ D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.UserList.resources
 D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.IngredientList.resources
 D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.AddIngredientForm.resources
 D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.EditIngredientForm.resources
+D:\Andrey\ws_train\ws_train\WF_App\WF_App\obj\Debug\WF_App.UserCabinet.resources

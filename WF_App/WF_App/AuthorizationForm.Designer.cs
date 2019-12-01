@@ -43,7 +43,7 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(244, 22);
             this.txtLogin.TabIndex = 0;
-            this.txtLogin.Text = "DEsar2018";
+            this.txtLogin.Text = "loginDEsar2018";
             // 
             // label1
             // 
