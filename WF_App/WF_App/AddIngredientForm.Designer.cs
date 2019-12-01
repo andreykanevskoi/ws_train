@@ -61,7 +61,7 @@
             this.txtIngredientID.Location = new System.Drawing.Point(6, 47);
             this.txtIngredientID.Name = "txtIngredientID";
             this.txtIngredientID.Size = new System.Drawing.Size(242, 22);
-            this.txtIngredientID.TabIndex = 3;
+            this.txtIngredientID.TabIndex = 0;
             // 
             // label2
             // 
@@ -77,7 +77,7 @@
             this.txtName.Location = new System.Drawing.Point(6, 92);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(242, 22);
-            this.txtName.TabIndex = 3;
+            this.txtName.TabIndex = 1;
             // 
             // label3
             // 
@@ -127,7 +127,7 @@
             this.txtQuantity.Location = new System.Drawing.Point(6, 276);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(242, 22);
-            this.txtQuantity.TabIndex = 3;
+            this.txtQuantity.TabIndex = 5;
             // 
             // label7
             // 
@@ -150,14 +150,16 @@
             // 
             // cboxType
             // 
+            this.cboxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxType.FormattingEnabled = true;
             this.cboxType.Location = new System.Drawing.Point(6, 137);
             this.cboxType.Name = "cboxType";
             this.cboxType.Size = new System.Drawing.Size(242, 24);
-            this.cboxType.TabIndex = 4;
+            this.cboxType.TabIndex = 2;
             // 
             // cboxPack
             // 
+            this.cboxPack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxPack.FormattingEnabled = true;
             this.cboxPack.Location = new System.Drawing.Point(6, 229);
             this.cboxPack.Name = "cboxPack";
@@ -166,11 +168,12 @@
             // 
             // cboxUnit
             // 
+            this.cboxUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxUnit.FormattingEnabled = true;
             this.cboxUnit.Location = new System.Drawing.Point(6, 321);
             this.cboxUnit.Name = "cboxUnit";
             this.cboxUnit.Size = new System.Drawing.Size(242, 24);
-            this.cboxUnit.TabIndex = 4;
+            this.cboxUnit.TabIndex = 6;
             // 
             // groupBox1
             // 

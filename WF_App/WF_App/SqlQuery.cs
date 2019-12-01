@@ -94,6 +94,7 @@ namespace WF_App
             manager.sql_command = new SqlCommand(request, manager.sql_connection);
             manager.sql_DR = manager.sql_command.ExecuteReader();
 
+            dgw.Rows.Clear();
             while(manager.sql_DR.Read())
             {
                 string[] row =
@@ -147,14 +148,16 @@ namespace WF_App
             SqlManager manager = new SqlManager();
             manager.sql_connection.Open();
 
-            string request = @"SELECT i.[IngredientID],i.[Name],t.[Type],i.[Price],p.[Pack],i.[Quantity],i.[Unit] " +
-                             @"FROM[dbo].[Ingredients] as i " +
+            string request = @"SELECT i.[IngredientID],i.[Name],t.[Type],i.[Price],p.[Pack],i.[Quantity],u.[Unit] " +
+                             @"FROM [dbo].[Ingredients] as i " +
                              @"JOIN [dbo].[PackGlos] as p ON i.[PackID] = p.[Pack_ID] " +
-                             @"JOIN[dbo].[TypeGlos] as t ON i.[TypeID] = t.[Type_ID]";
+                             @"JOIN [dbo].[TypeGlos] as t ON i.[TypeID] = t.[Type_ID] " +
+                             @"JOIN [dbo].[UnitGlos] as u ON i.Unit = u.UnitID";
 
             manager.sql_command = new SqlCommand(request, manager.sql_connection);
             manager.sql_DR = manager.sql_command.ExecuteReader();
 
+            dgw.Rows.Clear();
             while (manager.sql_DR.Read())
             {
                 string[] row =
@@ -181,10 +184,11 @@ namespace WF_App
 
             dgw.Rows.Clear();
 
-            string request = @"SELECT i.[IngredientID],i.[Name],t.[Type],i.[Price],p.[Pack],i.[Quantity],i.[Unit] " +
-                             @"FROM[dbo].[Ingredients] as i " +
+            string request = @"SELECT i.[IngredientID],i.[Name],t.[Type],i.[Price],p.[Pack],i.[Quantity],u.[Unit] " +
+                             @"FROM [dbo].[Ingredients] as i " +
                              @"JOIN [dbo].[PackGlos] as p ON i.[PackID] = p.[Pack_ID] " +
-                             @"JOIN[dbo].[TypeGlos] as t ON i.[TypeID] = t.[Type_ID]" +
+                             @"JOIN [dbo].[TypeGlos] as t ON i.[TypeID] = t.[Type_ID] " +
+                             @"JOIN [dbo].[UnitGlos] as u ON i.Unit = u.UnitID " +
                string.Format(@"WHERE [{0}] LIKE '%{1}%'", column, pattern);
 
             manager.sql_command = new SqlCommand(request, manager.sql_connection);
@@ -261,6 +265,28 @@ namespace WF_App
 
             manager.sql_connection.Close();
             return result;
+        }
+    
+        public static void Query_Ingredient_InsertIngredient(int iID, 
+                                                             string iName, 
+                                                             int iType,
+                                                             double iPrice,
+                                                             int iPack,
+                                                             int iQuantity,
+                                                             int iUnit)
+        {
+            SqlManager manager = new SqlManager();
+            manager.sql_connection.Open();
+
+            string _iPrice = iPrice.ToString().Replace(',', '.');
+
+            string request = @"INSERT INTO [Ingredients] ([IngredientID],[Name],[TypeID],[Price],[PackID],[Quantity],[Unit]) " +
+               string.Format(@"VALUES ({0}, '{1}', {2}, {3}, {4}, {5}, {6})",  iID, iName, iType+1, _iPrice, iPack+1, iQuantity, iUnit+1);
+
+            manager.sql_command = new SqlCommand(request, manager.sql_connection);
+            manager.sql_command.ExecuteNonQuery();
+
+            manager.sql_connection.Close();
         }
     }
 }

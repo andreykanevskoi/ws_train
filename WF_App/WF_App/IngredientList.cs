@@ -82,6 +82,17 @@ namespace WF_App
         private void btnAdd_Click(object sender, EventArgs e)
         {
             this.OpenForm(new AddIngredientForm(), false);
+            SqlQuery.Query_Ingredient_FillDataGridViewWithIngredients(dgwIngredients);
+        }
+
+        private void dgwIngredients_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            lblQuantity.Text = dgwIngredients.Rows.Count.ToString();
+        }
+
+        private void dgwIngredients_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            lblQuantity.Text = dgwIngredients.Rows.Count.ToString();
         }
     }
 }

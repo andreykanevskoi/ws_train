@@ -62,7 +62,7 @@
             this.btnClose.Location = new System.Drawing.Point(18, 395);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(304, 43);
-            this.btnClose.TabIndex = 1;
+            this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Закрыть";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -82,7 +82,7 @@
             this.btnIngredientsList.Location = new System.Drawing.Point(5, 22);
             this.btnIngredientsList.Name = "btnIngredientsList";
             this.btnIngredientsList.Size = new System.Drawing.Size(304, 43);
-            this.btnIngredientsList.TabIndex = 3;
+            this.btnIngredientsList.TabIndex = 0;
             this.btnIngredientsList.Text = "Таблица ингредиентов";
             this.btnIngredientsList.UseVisualStyleBackColor = true;
             this.btnIngredientsList.Click += new System.EventHandler(this.btnIngredientsList_Click);

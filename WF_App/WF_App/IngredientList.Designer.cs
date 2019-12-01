@@ -43,6 +43,8 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblQuantity = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgwIngredients)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +84,7 @@
             this.btnFilter.Location = new System.Drawing.Point(278, 26);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(130, 38);
-            this.btnFilter.TabIndex = 3;
+            this.btnFilter.TabIndex = 2;
             this.btnFilter.Text = "Фильтровать";
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
@@ -102,7 +104,7 @@
             this.cboxColumn.Location = new System.Drawing.Point(6, 34);
             this.cboxColumn.Name = "cboxColumn";
             this.cboxColumn.Size = new System.Drawing.Size(121, 24);
-            this.cboxColumn.TabIndex = 4;
+            this.cboxColumn.TabIndex = 0;
             // 
             // txtFilter
             // 
@@ -110,7 +112,7 @@
             this.txtFilter.Multiline = true;
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(139, 24);
-            this.txtFilter.TabIndex = 5;
+            this.txtFilter.TabIndex = 1;
             // 
             // dgwIngredients
             // 
@@ -130,6 +132,8 @@
             this.dgwIngredients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwIngredients.Size = new System.Drawing.Size(1206, 426);
             this.dgwIngredients.TabIndex = 6;
+            this.dgwIngredients.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgwIngredients_RowsAdded);
+            this.dgwIngredients.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgwIngredients_RowsRemoved);
             // 
             // IngredienID
             // 
@@ -192,11 +196,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Фильтрация";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Записей в таблице:";
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Location = new System.Drawing.Point(156, 68);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(16, 17);
+            this.lblQuantity.TabIndex = 9;
+            this.lblQuantity.Text = "0";
+            // 
             // IngredientList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1230, 571);
+            this.Controls.Add(this.lblQuantity);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgwIngredients);
             this.Controls.Add(this.btnDelete);
@@ -213,6 +237,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -233,5 +258,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PackID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblQuantity;
     }
 }
