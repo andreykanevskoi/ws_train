@@ -94,5 +94,11 @@ namespace WF_App
         {
             lblQuantity.Text = dgwIngredients.Rows.Count.ToString();
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            this.OpenForm(new EditIngredientForm(dgwIngredients.SelectedRows[0]), false);
+            SqlQuery.Query_Ingredient_FillDataGridViewWithIngredients(dgwIngredients);
+        }
     }
 }

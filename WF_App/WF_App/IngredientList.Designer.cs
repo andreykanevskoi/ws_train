@@ -45,6 +45,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwIngredients)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -116,6 +117,8 @@
             // 
             // dgwIngredients
             // 
+            this.dgwIngredients.AllowUserToAddRows = false;
+            this.dgwIngredients.AllowUserToDeleteRows = false;
             this.dgwIngredients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwIngredients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IngredienID,
@@ -127,6 +130,7 @@
             this.Unit});
             this.dgwIngredients.Location = new System.Drawing.Point(12, 91);
             this.dgwIngredients.Name = "dgwIngredients";
+            this.dgwIngredients.ReadOnly = true;
             this.dgwIngredients.RowHeadersWidth = 51;
             this.dgwIngredients.RowTemplate.Height = 24;
             this.dgwIngredients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -141,6 +145,7 @@
             this.IngredienID.HeaderText = "Артикул";
             this.IngredienID.MinimumWidth = 6;
             this.IngredienID.Name = "IngredienID";
+            this.IngredienID.ReadOnly = true;
             // 
             // IngredientName
             // 
@@ -148,6 +153,7 @@
             this.IngredientName.HeaderText = "Наименование";
             this.IngredientName.MinimumWidth = 300;
             this.IngredientName.Name = "IngredientName";
+            this.IngredientName.ReadOnly = true;
             // 
             // Type
             // 
@@ -155,6 +161,7 @@
             this.Type.HeaderText = "Тип";
             this.Type.MinimumWidth = 6;
             this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
             // 
             // Price
             // 
@@ -162,6 +169,7 @@
             this.Price.HeaderText = "Цена";
             this.Price.MinimumWidth = 80;
             this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             // 
             // PackID
             // 
@@ -169,6 +177,7 @@
             this.PackID.HeaderText = "Фасовка";
             this.PackID.MinimumWidth = 6;
             this.PackID.Name = "PackID";
+            this.PackID.ReadOnly = true;
             // 
             // Quantity
             // 
@@ -176,6 +185,7 @@
             this.Quantity.HeaderText = "Количество";
             this.Quantity.MinimumWidth = 6;
             this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
             // 
             // Unit
             // 
@@ -183,6 +193,7 @@
             this.Unit.HeaderText = "Единицы измерения";
             this.Unit.MinimumWidth = 6;
             this.Unit.Name = "Unit";
+            this.Unit.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -214,11 +225,22 @@
             this.lblQuantity.TabIndex = 9;
             this.lblQuantity.Text = "0";
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(816, 524);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(130, 37);
+            this.btnEdit.TabIndex = 10;
+            this.btnEdit.Text = "Редактировать";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // IngredientList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1230, 571);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -249,7 +271,6 @@
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.ComboBox cboxColumn;
         private System.Windows.Forms.TextBox txtFilter;
-        private System.Windows.Forms.DataGridView dgwIngredients;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IngredienID;
         private System.Windows.Forms.DataGridViewTextBoxColumn IngredientName;
@@ -260,5 +281,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblQuantity;
+        private System.Windows.Forms.Button btnEdit;
+        public System.Windows.Forms.DataGridView dgwIngredients;
     }
 }

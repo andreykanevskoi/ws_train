@@ -1,56 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WF_App
 {
-    public partial class AddIngredientForm : Form
+    public partial class EditIngredientForm : Form
     {
-        public AddIngredientForm()
+        private DataGridViewRow oldRow;
+        //private DataGridViewRow newRow;
+
+        public EditIngredientForm(DataGridViewRow selectedRow)
         {
             InitializeComponent();
+            oldRow = selectedRow;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void EditIngredientForm_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void AddIngredientForm_Load(object sender, EventArgs e)
-        {
+            // подгрузка comboBox'ов
             List<string> args;
             args = SqlQuery.Query_Ingredient_GetGlossaryByList("dbo.PackGlos", "dbo.PackGlos.Pack");
-
             foreach (string arg in args)
             {
                 cboxPack.Items.Add(arg);
             }
 
             args = SqlQuery.Query_Ingredient_GetGlossaryByList("dbo.TypeGlos", "dbo.TypeGlos.Type");
-
             foreach (string arg in args)
             {
                 cboxType.Items.Add(arg);
             }
 
             args = SqlQuery.Query_Ingredient_GetGlossaryByList("dbo.UnitGlos", "dbo.UnitGlos.Unit");
-
             foreach (string arg in args)
             {
                 cboxUnit.Items.Add(arg);
             }
 
-            return;
+            // заполнение формы
+            txtIngredientID.Text = oldRow.Cells[0].Value.ToString();
+            txtName.Text = oldRow.Cells[1].Value.ToString();
+            cboxType.SelectedIndex = cboxType.Items.IndexOf(oldRow.Cells[2].Value.ToString());
+            txtPrice.Text = oldRow.Cells[3].Value.ToString();
+            cboxPack.SelectedIndex = cboxPack.Items.IndexOf(oldRow.Cells[4].Value.ToString());
+            txtQuantity.Text = oldRow.Cells[5].Value.ToString();
+            cboxUnit.SelectedIndex = cboxUnit.Items.IndexOf(oldRow.Cells[6].Value.ToString());
         }
 
-        private void btnAddIngredient_Click(object sender, EventArgs e)
+        private void btnEditIngredient_Click(object sender, EventArgs e)
         {
+            SqlQuery.Query_Ingredient_DeleteIngredient(oldRow.Cells[0].Value.ToString());
+
             // проверка поля "Артикул"
             if (string.IsNullOrWhiteSpace(txtIngredientID.Text))
             {
@@ -102,7 +103,6 @@ namespace WF_App
                 txtPrice.BackColor = Color.LightCoral;
                 return;
             }
-            
             txtPrice.BackColor = Color.LightGreen;
 
             // проверка поля "количество"
@@ -131,7 +131,7 @@ namespace WF_App
                                                        Convert.ToInt32(txtQuantity.Text),
                                                        cboxUnit.SelectedIndex);
 
-            MessageBox.Show("Ингредиент добавлен!");
+            MessageBox.Show("Ингредиент отредактирован!");
             this.Close();
         }
     }
